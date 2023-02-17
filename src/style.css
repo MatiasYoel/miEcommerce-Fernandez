@@ -1,0 +1,49 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+.titulo{
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    line-height: 1.4;
+    font-weight: 300;
+}
+.logo{
+    width: 60px;
+    margin-left: 5px;
+}
+.tituloLogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+.carrito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: alternate;
+    margin-right: 40px;
+}
+.categorias{
+    margin-left: 50px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.0;
+    font-weight: 500;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.bienvenida{
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    line-height: 1.4;
+    font-weight: 300;
+}
