@@ -13,4 +13,4 @@ return (
 );
 };
 
-export default itemCount;
+export default ItemCount;
