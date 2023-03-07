@@ -1,14 +1,21 @@
 import { useState } from 'react';
-const itemCount = () => {
+import { Button } from '@chakra-ui/react';
+const ItemCount = () => {
 const [cantidad, setCantidad] = useState(0);
 
 return (
     <>
-        <h1>Cantidad Seleccionada</h1>
-        <h2>{cantidad}</h2>
-        <button onClick={() => setCantidad(cantidad + 1)}>Agregar</button>
-        <button onClick={() => setCantidad(cantidad - 1)}>Quitar</button>
-        <button onClick={() => setCantidad(0)}>Reiniciar</button>
+        <div>
+            <h1>Cantidad </h1>
+        </div>
+        <div className='cantidad'>
+            <Button as={Button} className='categorias' onClick={() => setCantidad(cantidad + 1)}>Agregar</Button>
+            <h2>{cantidad}</h2>
+            <Button as={Button} className='categorias' onClick={() => setCantidad(cantidad - 1)}>Quitar</Button>
+        </div>
+        <div>
+            <Button as={Button} className='categorias' onClick={() => setCantidad(0)}>Reiniciar</Button>
+        </div>
     </>
 );
 };

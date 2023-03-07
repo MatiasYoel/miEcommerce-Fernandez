@@ -1,7 +1,7 @@
 .nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin-top: 15px;
     margin-bottom: 40px;
@@ -21,6 +21,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
 
 }
 .carrito{
@@ -42,8 +43,156 @@
     justify-content: center;
 }
 .bienvenida{
+    display: flex;
+    justify-content: center;
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     line-height: 1.4;
     font-weight: 300;
+    width: 100%;
+    height: 100%;
 }
+.cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+.menu-list{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.0;
+    font-weight: 800;
+}
+
+.main-catalogue{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5rem;
+}
+
+.card-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.card-main{
+    width: 18rem;
+    margin: 1rem;
+}
+
+.welcome-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-send{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 1rem;
+}
+
+.cart-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 10rem;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carrito{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    background-image: url(https://www.reviewbox.es/wp-content/uploads/2019/10/perchas0-scaled.jpg);
+}
+.cantidad{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+
+}
+.flex{
+    display: flex;
+    justify-content: center;
+}
+/*Card*/
+.card{
+    position: relative;
+    width: 320px;
+    height: 530px;
+    background: #000;
+    border-radius: 25px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.card .imgBg{
+    width: 100%;
+    height: 530px;
+    transition: 0.3s;
+    background: url('https://d3ugyf2ht6aenh.cloudfront.net/stores/144/702/products/remera-hombre-microfribra-negra-frente1-610cb5cbd3ee068e2516364701229138-1024-1024.webp');
+    background-position: center;
+    background-size: cover;
+
+}
+.card .imgBg .contenido{
+    position: absolute;
+    width: 100%;
+    height: 360px;
+    bottom: 0;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 0 13px;
+    transition: 0.3s;
+    background: linear-gradient(to top,#000 70% transparent);
+    opacity: 0;
+}
+.card .imgBg .contenido .box1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.card .imgBg .contenido .box2{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.card .imgBg .contenido .box2 Button:hover {
+background: #6d33ab;
+}
+.card:hover .imgBg{
+    height: 400px;
+}
+ .card:hover .contenido{
+    opacity: 1;
+ }
