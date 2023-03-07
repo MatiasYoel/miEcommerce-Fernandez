@@ -46,38 +46,3 @@ return (
 }
 
 export default NavBar
-/*<MenuList>
-                <MenuItem minH='48px'>
-                <Image
-                    boxSize='2rem'
-                    borderRadius='full'
-                    src='https://placekitten.com/100/100'
-                    alt='Fluffybuns the destroyer'
-                    mr='12px'
-                />
-                <span>Hombre</span>
-                <Link to={`/category/${"Hombre"}`}></Link>
-                </MenuItem>
-                <MenuItem minH='40px'>
-                <Image
-                    boxSize='2rem'
-                    borderRadius='full'
-                    src='https://placekitten.com/120/120'
-                    alt='Simon the pensive'
-                    mr='12px'
-                />
-                <span>Mujer</span>
-                <Link to={`/category/${"Mujer"}`}></Link>
-                </MenuItem>
-                <MenuItem minH='40px'>
-                <Image
-                    boxSize='2rem'
-                    borderRadius='full'
-                    src='https://placekitten.com/100/105'
-                    alt='Simon the pensive'
-                    mr='12px'
-                />
-                <span>Infantil</span>
-                <Link to={`/category/${"Infantil"}`}></Link>
-                </MenuItem>
-            </MenuList>*/
