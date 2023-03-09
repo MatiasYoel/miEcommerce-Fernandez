@@ -4,9 +4,7 @@ import Welcome from "./components/Welcome"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart"
 import { ChakraProvider } from '@chakra-ui/react'
-import { BrowserRouter,Route,Routes,Link } from "react-router-dom"
-
-
+import { BrowserRouter,Route,Routes } from "react-router-dom"
 
 const App = () => {
 return (

@@ -1,14 +1,11 @@
 import {Card,CardBody,CardFooter,Heading,Image,Stack,Text,Divider,Button,Center,Flex,} from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount"; 
-const ItemDetail = ({data}) => {
-    const { id } = useParams();
-
-    const dataFilter = data.filter((productos) => productos.id == id);
+const ItemDetail = ({product}) => {
+    
 return (
     <div>
     <>
-    {dataFilter.map((productos) => (
+    {product.map((productos) => (
         <div key={productos.id}>
             <Center p="1rem">
                 <Card className="card-main">
@@ -49,3 +46,10 @@ return (
 }
 
 export default ItemDetail
+
+/*
+const ItemDetail = ({data}) => {
+    const { id } = useParams();
+
+    const dataFilter = data.filter((productos) => productos.id == id);
+    */

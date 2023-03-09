@@ -1,11 +1,11 @@
 import Item from "./Item"
 import { Container } from "@chakra-ui/react"
 
-const ItemList = ({datos}) => {
+const ItemList = ({product}) => {
 return (
     <div>
         <Container className="main-catalogue">
-        {datos?.map((productos) =>(
+        {product?.map((productos) =>(
             <Item
                 key={productos.id}
                 id={productos.id}
