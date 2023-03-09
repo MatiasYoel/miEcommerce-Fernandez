@@ -4,6 +4,39 @@ import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom"
 
 const ItemDetailContainer = () => {
+  const [products, setProduct] = useState([]);
+    const {id} = useParams();
+    const getDatos = new Promise((resolve,reject) => {
+            if (datos.length === 0) {
+                reject (new Error ("No Hay Datos"));
+            }
+            else{
+                resolve(datos)
+            }
+        });
+    
+    useEffect(() => {
+        getDatos.then((res) => {
+            id
+            ? setProduct(res.filter((item)=>item.id === id))
+            : setProduct (res)
+        })       
+    
+    .catch((err)=> console.log(err));
+}, [id]);
+console.log(products)
+  return (
+    <div>
+      <ItemDetail products={products}/>
+    </div>
+  )
+}
+
+
+export default ItemDetailContainer
+
+/*
+const ItemDetailContainer = () => {
   const getDatos = () => {
     return new Promise ((resolve,reject) => {
         if (datos.length === 0) {
@@ -30,6 +63,4 @@ const [product, setProduct] = useState([]);
     </div>
   )
 }
-
-
-export default ItemDetailContainer
+*/

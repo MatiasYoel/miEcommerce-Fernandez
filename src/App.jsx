@@ -5,7 +5,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart"
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter,Route,Routes } from "react-router-dom"
-
+import cartContext from "./context/cartContext"
 const App = () => {
 return (
   <BrowserRouter >
