@@ -24,7 +24,7 @@ const Item = ({ id, name, stock, category, image }) => {
           <Divider />
           <CardFooter className="card-footer">
             <Center className="btn-center flex">
-              <Button as={Button} className='categorias'>
+              <Button as={Button} className='estiloBoton'>
                 <Link to={`/item/${id}`}>Detalles</Link>
               </Button>
             </Center>

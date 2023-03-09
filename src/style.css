@@ -140,6 +140,11 @@ form{
     display: flex;
     justify-content: center;
 }
+estiloBoton{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.0;
+    font-weight: 500;
+}
 /*Card*/
 .card{
     position: relative;
