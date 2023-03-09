@@ -1,11 +1,10 @@
 import {Card,CardBody,CardFooter,Heading,Image,Stack,Text,Divider,Button,Center,Flex,} from "@chakra-ui/react";
 import ItemCount from "./ItemCount"; 
-const ItemDetail = ({product}) => {
-    
+const ItemDetail = ({products}) => {
 return (
     <div>
     <>
-    {product.map((productos) => (
+    {products.map((productos) => (
         <div key={productos.id}>
             <Center p="1rem">
                 <Card className="card-main">
