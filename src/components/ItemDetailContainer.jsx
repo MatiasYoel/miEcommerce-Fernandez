@@ -1,66 +1,25 @@
 import ItemDetail from "./ItemDetail"
-import datos from "../productos.json"
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom"
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const [products, setProduct] = useState([]);
-    const {id} = useParams();
-    const getDatos = new Promise((resolve,reject) => {
-            if (datos.length === 0) {
-                reject (new Error ("No Hay Datos"));
-            }
-            else{
-                resolve(datos)
-            }
-        });
+  const [data, setData] = useState([]);
+  const {id} = useParams();
+  
+  useEffect(() => {
+    const db =getFirestore();
+    const Doc = doc(db,"indumentaria", id)
+    getDoc(Doc)
+      .then(result => setData({id:result.id, ...result.data()}))
+
     
-    useEffect(() => {
-        getDatos.then((res) => {
-            id
-            ? setProduct(res.filter((item)=>item.id === id))
-            : setProduct (res)
-        })       
-    
-    .catch((err)=> console.log(err));
-}, [id]);
-console.log(products)
+  },[id])
+  
   return (
     <div>
-      <ItemDetail products={products}/>
+        <ItemDetail data={data}/>
     </div>
   )
 }
-
-
 export default ItemDetailContainer
-
-/*
-const ItemDetailContainer = () => {
-  const getDatos = () => {
-    return new Promise ((resolve,reject) => {
-        if (datos.length === 0) {
-            reject (new Error ("No Hay Datos"));
-        }
-        else{
-            resolve(datos)
-        }
-    });
-};
-const [product, setProduct] = useState([]);
-    
-    useEffect(() => {
-        getDatos().then((product) => setProduct (product));
-    },[]
-    )
-    const { id } = useParams();
-
-    const productFilter = product.filter((productos) => productos.id == id);
-
-  return (
-    <div>
-        {id? <ItemDetail product={productFilter}/> : <ItemDetail product={product}/>}
-    </div>
-  )
-}
-*/

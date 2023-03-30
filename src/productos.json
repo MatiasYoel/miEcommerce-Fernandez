@@ -1,26 +1,26 @@
 [
     {
         "id": 1,
-        "name": "Remera Basica Hombre",
-        "price": 4999,
+        "name": "REMERA BASICA HOMBRE",
+        "price": 4.999,
         "stock": 4,
         "category": "Hombre",
-        "description":"Remera Basica Hombre, Manga Cortas 100%algodon Cuello redondo Corte Regular",
+        "description":"Remera Basica Hombre, Manga Cortas 100% algodon Cuello redondo Corte Regular.",
         "image": "https://d3ugyf2ht6aenh.cloudfront.net/stores/144/702/products/remera-hombre-microfribra-negra-frente1-610cb5cbd3ee068e2516364701229138-1024-1024.webp"
     },
     {
         "id": 2,
-        "name": "Remera Niño",
-        "price": 3999,
+        "name": "REMERA FREEFIRE INFANTIL",
+        "price": 3.999,
         "stock": 8,
         "category": "Infantil",
-        "description":"Remera FreeFire Niño, Manga Cortas 100%algodon Cuello redondo",
-        "image": "https://www.nowork.com.ar/uploads/products/free-fire-logo-grande/remera-hombre-frente-negro_new.jpg"
+        "description":"Remera FreeFire Niño, Manga Cortas 100%algodon Cuello redondo.",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_683909-MLA46454463815_062021-O.jpg"
     },
     {
         "id": 3,
-        "name": "Remera Mujer",
-        "price": 7999,
+        "name": "REMERA NUDO MUJER ESTAMPA",
+        "price": 7.999,
         "stock": 3,
         "category": "Mujer",
         "description":"Remera de Mujer manga corta con nudo y estampa en el frente.",

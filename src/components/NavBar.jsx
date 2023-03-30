@@ -1,5 +1,5 @@
 import CartWidget from './CartWidget'; 
-import { Button,Menu,MenuButton,MenuList,Image,MenuItem,Box} from '@chakra-ui/react';
+import { Button,Menu,MenuButton,MenuList,MenuItem,Box} from '@chakra-ui/react';
 import {Link } from "react-router-dom"
 
 const NavBar = () => {
@@ -7,8 +7,7 @@ return (
     <div className='nav'>
         <div className='tituloLogo'>
             <h3 className='titulo'><Link to={"/"}>Tu Pilcha</Link>  </h3>
-                <img className='logo' src="../src/assets/percha.png" alt="logo" />
-                
+            <img className='logo' src="../src/assets/percha.png" alt="logo" />
         </div>
         <Menu  className='categorias'>
             <MenuButton as={Button} className='categorias'>
@@ -32,7 +31,7 @@ return (
                     as={Button}
                     className='categorias'
                 >
-                Catalogo
+                Catálogo
                 </MenuButton>
             </Link>
             </Menu>

@@ -5,11 +5,14 @@ import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart"
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter,Route,Routes } from "react-router-dom"
-import cartContext from "./context/cartContext"
+import CartProvider from './context/CartContext';
+import Form from "./components/Form"
+
 const App = () => {
 return (
-  <BrowserRouter >
+  <BrowserRouter>
     <ChakraProvider>
+      <CartProvider>
       <NavBar/>
       <Routes>
         <Route exact path="/" element={<Welcome />}/>
@@ -21,7 +24,10 @@ return (
         />
         <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         <Route exact path="/cart" element={<Cart />} />
+        <Route exact path="/form" element={<Form/>}/>
       </Routes>
+      </CartProvider>
+      
     </ChakraProvider> 
   </BrowserRouter>
       
