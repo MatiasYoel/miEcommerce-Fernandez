@@ -1,54 +1,55 @@
-import {Card,CardBody,CardFooter,Heading,Image,Stack,Text,Divider,Button,Center,Flex,} from "@chakra-ui/react";
-import ItemCount from "./ItemCount"; 
-const ItemDetail = ({products}) => {
+import React from "react";
+import {Heading,Image,Text} from "@chakra-ui/react";
+import ItemCount from "./ItemCount";
+import { useCartContext } from '../context/CartContext'
+
+const ItemDetail = ({data}) => {
+
+    const {addProduct} = useCartContext()
+
+    const onAdd = (quantity) =>{
+        addProduct(data,quantity)
+    }
+
 return (
+<div>
+<>
+<div key={data.id} className="contenedorProducto">
+    <div className="img">
+        <Image borderRadius="lg" src={data.image} className="imgProduct" />
+    </div>
     <div>
-    <>
-    {products.map((productos) => (
-        <div key={productos.id}>
-            <Center p="1rem">
-                <Card className="card-main">
-                <CardBody>
-                    <Image borderRadius="lg" src={productos.image} />
-                    <Stack mt="6" spacing="3">
-                        <Heading size="md">{productos.name}</Heading>
-                        <Text color="blue.800" fontSize="l">
-                        Descripcion: {productos.description}
-                        </Text>
-                        <Text color="blue.800" fontSize="l">
-                        Categoria: {productos.category}
-                        </Text>
-                        <Text color="green.600" fontSize="xl">
-                        Stock: {productos.stock}
-                        </Text>
-                        <Text color="black.600" fontSize="xl">
-                        Precio:$ {productos.price}
-                        </Text>
-                    </Stack>
-                </CardBody>
-                <Divider />
-                <CardFooter className="card-footer">
-                    <ItemCount
-                        stock={productos.stock}
-                        id={productos.id}
-                        price={productos.price}
-                        name={productos.name}
-                    />
-                </CardFooter>
-            </Card>
-        </Center>
+        <Heading className="titleProducto">{data.name}</Heading>
+        <Text className="titlePrice">
+            ${data.price},00
+        </Text>
+        <Text className="subTitleProducto">
+            Descripcion
+        </Text>
+        <Text className="contenidoProductos">
+            {data.description}
+        </Text>
+        <Text className="subTitleProducto">
+            Categoria
+        </Text>
+        <Text className="contenidoProductos">
+            {data.category}
+        </Text>
+        <Text className="contenidoProductos">
+            Stock: {data.stock} unidades
+        </Text>
+        <Text className="subTitleProducto">
+            Cantidad
+        </Text>
+        <div className="cantidad">  
+        <ItemCount initial={1} stock={data.stock} onAdd={onAdd}/>
+
+        </div>
     </div>
-    ))}
-    </>
-    </div>
+</div>
+</>
+</div>
 )
 }
 
-export default ItemDetail
-
-/*
-const ItemDetail = ({data}) => {
-    const { id } = useParams();
-
-    const dataFilter = data.filter((productos) => productos.id == id);
-    */
+export default React.memo(ItemDetail)

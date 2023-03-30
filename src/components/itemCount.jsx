@@ -1,20 +1,27 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Button } from '@chakra-ui/react';
-const ItemCount = () => {
-const [cantidad, setCantidad] = useState(0);
+
+const ItemCount = ({initial,stock,onAdd}) => {
+
+    const [count, setCount] = useState(parseInt(initial));
+
+    const increase = () =>{
+        setCount(count + 1)
+    }
+    const decrease = () =>{
+        setCount(count - 1)
+    }
+    useEffect(() =>{
+        setCount(parseInt(initial))
+    },[initial])
 
 return (
     <>
-        <div>
-            <h1>Cantidad </h1>
-        </div>
         <div className='cantidad'>
-            <Button as={Button} className='categorias' onClick={() => setCantidad(cantidad + 1)}>Agregar</Button>
-            <h2>{cantidad}</h2>
-            <Button as={Button} className='categorias' onClick={() => setCantidad(cantidad - 1)}>Quitar</Button>
-        </div>
-        <div>
-            <Button as={Button} className='categorias' onClick={() => setCantidad(0)}>Reiniciar</Button>
+            <button  className='buttonCount' disabled={count<= 1} onClick={decrease}>Quitar</button>
+            <h2 className='count'>{count}</h2>
+            <button className='buttonCount' disabled={count >= stock} onClick={increase}>Agregar</button>
+            <Button as={Button} className='buttonCount' disabled={stock <= 0} onClick={() => onAdd(count)}>Agregar al Carrito</Button>
         </div>
     </>
 );

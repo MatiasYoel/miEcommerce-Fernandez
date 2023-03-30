@@ -1,4 +1,3 @@
-import React from 'react'
 
 const Welcome = () => {
 return (
@@ -10,7 +9,6 @@ return (
             <img src="https://www.reviewbox.es/wp-content/uploads/2019/10/perchas0-scaled.jpg" alt="" />
         </div>
     </div>
-    
 )
 }
 
