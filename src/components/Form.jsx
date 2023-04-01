@@ -6,7 +6,7 @@ import { Link} from "react-router-dom";
 const Form = () => {
   const {cart,totalPrice,clearCart} = useCartContext()
     const [ordenId,setOrdenId]=useState(null);
-    const [userName,setUserName] = useState("");
+    const [nameBuyer,setnameBuyer] = useState("");
     const [email,setEmail] = useState("")
     const [celular,setCelular] = useState("")
     const db= getFirestore();
@@ -16,9 +16,8 @@ const Form = () => {
     }
 
     const orden = {
-      userName,
-      celular,
-      email,
+      buyer: {nameBuyer, celular,
+      email},
       items: cart.map(product =>({id:product.id, name: product.name, price: product.price,quantity: product.quantity})),
       total: (totalPrice()).toFixed(3)
     };
@@ -32,7 +31,7 @@ const Form = () => {
         <h2>Formulario de Compra</h2>
       <form onSubmit={handleSubmit} action="" className="contact" method="POST">
           <label for="nombreApellido">Nombre y Apellido</label>
-          <input type="text" name="nombreApellido" id="nombreApellido" onChange={(e) =>setUserName(e.target.value)}/>
+          <input type="text" name="nombreApellido" id="nombreApellido" onChange={(e) =>setnameBuyer(e.target.value)}/>
           <label for="celular">Celular</label>
           <input type="number" name="celular" id="celular"onChange={(e) =>setCelular(e.target.value)}/>
           <label for="email">Email</label>
