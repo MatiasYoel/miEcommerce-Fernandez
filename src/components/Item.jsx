@@ -19,23 +19,21 @@ const Item = ({ id, name, stock, price, image, description }) => {
   />
 
   <Stack>
-    <CardBody>
+    <CardBody className="bodyItem">
       <Heading size='md' className="titulo">{name}</Heading>
-      <Text py='2' className="subTitleProducto">
-      {description}
-      </Text>
       <Text py='2' className="subTitleProducto">
       ${price},00
       </Text>
       <Text py='2' className="contenidoProductos">
       Stock: {stock}
       </Text>
+      <Button as={Button} className='categorias bodyItem'>
+      <Link to={`/item/${id}`}>Detalles</Link>
+      </Button>
     </CardBody>
 
     <CardFooter>
-      <Button as={Button} className='categorias'>
-      <Link to={`/item/${id}`}>Detalles</Link>
-      </Button>
+      
     </CardFooter>
   </Stack>
 </Card>
